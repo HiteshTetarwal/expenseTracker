@@ -63,13 +63,14 @@ const ExpenseForm = (props) => {
   };
 
   const submitHandler = (event) => {
-    event.PreventDefault();
+    event.preventDefault();
+    
     const expenseData = {
       title: enteredTitle,
       amount: enteredAmount,
-      date: new Date(enteredDate),
+      date: new Date(enteredDate)
     };
-
+    
     props.onSaveExpenseData(expenseData);
     //reset the form
     setEnteredTitle('');
